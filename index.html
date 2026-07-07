@@ -12,14 +12,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
 <meta property="og:title" content="Portal Net — Internet Fibra Óptica em Aparecida de Goiânia">
 <meta property="og:description" content="Fibra óptica real em Aparecida de Goiânia. Planos a partir de R$99,90/mês, 100% fibra óptica e sem fidelidade.">
-<meta property="og:image" content="logo.png">
+<meta property="og:image" content="hero.jpg">
 <meta property="og:url" content="https://euwill-maker.github.io/portal-net/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Portal Net">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="logo.png">
-<link rel="preload" as="image" href="logo.png">
+<meta name="twitter:image" content="hero.jpg">
+<link rel="preload" as="image" href="hero.jpg" media="(min-width:769px)">
+<link rel="preload" as="image" href="hero-mobile.jpg" media="(max-width:768px)">
 <style>
 :root {
   --blue:       #0041BF;
@@ -95,10 +96,10 @@ img{max-width:100%;display:block}
 .hero-carousel{margin-top:132px;position:relative;height:620px;min-height:500px;overflow:hidden}
 .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;display:flex;align-items:flex-end;opacity:0;transition:opacity .8s ease}
 .hero-slide.active{opacity:1}
-#slide1{background:radial-gradient(circle at 75% 30%,rgba(255,101,19,.35) 0%,transparent 45%),linear-gradient(120deg,#002163 0%,#0041BF 55%,#1a56d6 100%)}
-#slide2{background:radial-gradient(circle at 25% 70%,rgba(255,101,19,.3) 0%,transparent 45%),linear-gradient(120deg,#001333 0%,#002163 45%,#0041BF 100%)}
+#slide1{background-image:url('hero.jpg');background-size:cover;background-position:center}
+#slide2{background-image:url('hero2.jpg');background-size:cover;background-position:center}
 .hero-fiber-lines{position:absolute;inset:0;opacity:.5;pointer-events:none}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,33,99,.55) 0%,transparent 55%)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,20,50,.5) 0%,transparent 55%),linear-gradient(to right,rgba(0,20,50,.55) 0%,rgba(0,20,50,.15) 45%,transparent 70%)}
 .hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 32px 64px;width:100%}
 .hero-content{max-width:560px}
 .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,101,19,.2);border:1px solid rgba(255,101,19,.4);color:#7DD3FC;font-size:12px;font-weight:700;padding:6px 14px;border-radius:50px;margin-bottom:18px;text-transform:uppercase;letter-spacing:.5px;backdrop-filter:blur(4px)}
@@ -388,6 +389,8 @@ img{max-width:100%;display:block}
   .nav-cta{font-size:11px;padding:7px 14px;letter-spacing:0}
   /* HERO */
   .hero-carousel{margin-top:108px;height:560px;min-height:520px}
+  #slide1{background-image:url('hero-mobile.jpg');background-position:center top}
+  .hero-overlay{background:linear-gradient(to top,rgba(0,15,40,.92) 0%,rgba(0,15,40,.65) 45%,rgba(0,15,40,.25) 70%,transparent 100%)!important}
   .hero-inner{padding:0 20px 36px}
   .hero-content{max-width:100%;text-align:center}
   .hero-title{font-size:26px;line-height:1.15;margin-bottom:10px}
@@ -1097,7 +1100,7 @@ const slides=document.querySelectorAll('.hero-slide'),dots=document.querySelecto
 let cur=0;
 function goSlide(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=n;slides[cur].classList.add('active');dots[cur].classList.add('active')}
 setInterval(()=>goSlide((cur+1)%slides.length),5000);
-if(window.innerWidth<=768&&slides.length>1){slides[0].classList.remove('active');dots[0].classList.remove('active');slides[1].classList.add('active');dots[1].classList.add('active');cur=1;}
+
 
 // REVEAL
 const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target)}})},{threshold:.12});
