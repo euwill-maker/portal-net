@@ -148,8 +148,8 @@ img{max-width:100%;display:block}
 .section-title{font-family:'Nunito',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--blue-dark);text-transform:uppercase;line-height:1.1}
 .section-title .accent{color:var(--blue)}
 .plans-grid{max-width:980px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.plan-card{background:white;border:2px solid #E2EAF8;border-radius:20px;padding:32px 24px 28px;text-align:center;transition:all .3s;position:relative}
-.plan-card:hover{transform:translateY(-8px);box-shadow:0 20px 48px rgba(0,65,191,.12);border-color:var(--blue)}
+.plan-card{background:white;border:2px solid #E2EAF8;border-radius:20px;padding:32px 24px 28px;text-align:center;transition:all .3s;position:relative;box-shadow:0 6px 24px rgba(0,65,191,.06)}
+.plan-card:hover{transform:translateY(-8px);box-shadow:0 20px 48px rgba(0,65,191,.14);border-color:var(--blue)}
 .plan-card.featured{background:var(--blue-dark);border-color:var(--blue-dark);transform:scale(1.04)}
 .plan-card.featured:hover{transform:scale(1.04) translateY(-8px);box-shadow:0 24px 56px rgba(0,33,99,.35)}
 .plan-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--teal);color:white;font-size:11px;font-weight:800;padding:5px 20px;border-radius:50px;white-space:nowrap;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:4px;box-shadow:0 4px 12px rgba(255,101,19,.4)}
@@ -170,10 +170,26 @@ img{max-width:100%;display:block}
 .plan-card.featured .plan-price{color:white}
 .plan-price-note{font-size:12px;color:#94a3b8;margin-bottom:24px}
 .plan-card.featured .plan-price-note{color:rgba(255,255,255,.5)}
-.btn-plan{display:block;width:100%;padding:13px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;text-align:center;background:var(--blue-pale);color:var(--blue);transition:all .25s;text-transform:uppercase;letter-spacing:.3px}
-.btn-plan:hover{background:var(--blue);color:white}
-.plan-card.featured .btn-plan{background:var(--teal);color:white}
-.plan-card.featured .btn-plan:hover{background:#E0570D}
+.btn-plan{display:block;width:100%;padding:11px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;text-align:center;background:white;color:var(--blue);border:2px solid var(--blue);transition:all .25s;text-transform:uppercase;letter-spacing:.3px}
+.btn-plan:hover{background:var(--blue);color:white;transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,65,191,.25)}
+.plan-card.featured .btn-plan{background:var(--teal);color:white;border-color:var(--teal)}
+.plan-card.featured .btn-plan:hover{background:#E0570D;border-color:#E0570D;box-shadow:0 8px 20px rgba(255,101,19,.3)}
+
+/* APPS INCLUSOS */
+.apps-section{background:var(--blue-dark);padding:80px 0;position:relative;overflow:hidden}
+.apps-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,101,19,.12) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+.apps-inner{max-width:1100px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
+.apps-header{text-align:center;margin-bottom:48px}
+.apps-header .section-title{color:white}
+.apps-header .section-title .accent{color:var(--teal)}
+.apps-sub{font-size:15px;color:rgba(255,255,255,.6);max-width:520px;margin:10px auto 0;line-height:1.6}
+.apps-note{display:inline-flex;align-items:center;gap:8px;background:rgba(255,101,19,.15);border:1px solid rgba(255,101,19,.35);color:#FFB27A;font-size:12px;font-weight:700;padding:6px 16px;border-radius:50px;margin-top:16px}
+.apps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.apps-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:28px 20px;text-align:center;transition:all .3s}
+.apps-card:hover{background:rgba(255,255,255,.1);border-color:rgba(255,101,19,.4);transform:translateY(-6px)}
+.apps-icon{width:52px;height:52px;border-radius:14px;background:rgba(255,101,19,.15);color:var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.apps-name{font-family:'Nunito',sans-serif;font-size:17px;font-weight:900;color:white;margin-bottom:8px}
+.apps-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.55}
 
 /* ABOUT */
 .about{display:flex;min-height:480px;overflow:hidden}
@@ -364,6 +380,7 @@ img{max-width:100%;display:block}
 @media(max-width:1024px){
   .plans-grid{grid-template-columns:repeat(2,1fr);gap:16px}
   .plan-card.featured{transform:scale(1)}
+  .apps-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
   /* TOPBAR */
@@ -467,24 +484,12 @@ img{max-width:100%;display:block}
   .via-overlay{padding:0;align-items:flex-end}
   .via-modal{max-width:100%;border-radius:20px 20px 0 0;max-height:92vh}
   .via-messages{max-height:52vh;min-height:220px}
-  /* SVA */
-  .sva-section{padding:56px 0}
-  .sva-inner{padding:0 20px}
-  .sva-title{font-size:26px}
-  .sva-sub{font-size:14px}
-  .sva-header{margin-bottom:32px}
-  .sva-logo-pill{width:150px;height:76px;padding:16px 20px}
-  .sva-logo-pill img{max-width:110px;max-height:44px}
-  .sva-cta{margin-top:32px}
-  /* MÓVEL */
-  .movel-section{padding:56px 0}
-  .movel-inner{padding:0 20px}
-  .movel-title{font-size:26px}
-  .movel-sub{font-size:14px}
-  .movel-header{margin-bottom:28px}
-  .movel-cards{flex-direction:column;align-items:center;gap:14px}
-  .movel-card{width:100%;max-width:100%;backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(255,255,255,.1)}
-  .movel-data{font-size:44px}
+  /* APPS INCLUSOS */
+  .apps-section{padding:56px 0}
+  .apps-inner{padding:0 20px}
+  .apps-header{margin-bottom:32px}
+  .apps-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .apps-card{padding:22px 14px}
   /* SECTION TITLES */
   .section-title{font-size:26px}
 }
@@ -768,7 +773,51 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- TELEFONIA MÓVEL (removido — sem dados de planos móveis da Portal Net) -->
+<!-- APPS INCLUSOS -->
+<section class="apps-section">
+  <div class="apps-inner">
+    <div class="apps-header reveal">
+      <div class="section-label">Apps inclusos</div>
+      <h2 class="section-title">STREAMING E APPS<br><span class="accent">NO SEU PLANO</span></h2>
+      <p class="apps-sub">Entretenimento sem custo extra: filmes, séries e TV ao vivo direto no seu celular ou Smart TV.</p>
+      <div class="apps-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Incluso nos planos Exclusivo e Premium
+      </div>
+    </div>
+    <div class="apps-grid">
+      <div class="apps-card reveal reveal-delay-1">
+        <div class="apps-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <div class="apps-name">HBO Max</div>
+        <div class="apps-desc">Séries, filmes e produções originais HBO, tudo em um só app.</div>
+      </div>
+      <div class="apps-card reveal reveal-delay-2">
+        <div class="apps-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8H4a1 1 0 00-1 1v10a2 2 0 002 2h14a2 2 0 002-2V9a1 1 0 00-1-1z"/><path d="M2.5 8l2.5-4.5h3L5.5 8M9 8l2.5-4.5h3L12 8M15.5 8L18 3.5h3L18.5 8"/></svg>
+        </div>
+        <div class="apps-name">Telecine</div>
+        <div class="apps-desc">Grandes lançamentos e clássicos do cinema, direto no seu plano.</div>
+      </div>
+      <div class="apps-card reveal reveal-delay-3">
+        <div class="apps-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M8 21h8M12 19v2"/></svg>
+        </div>
+        <div class="apps-name">Watch TV</div>
+        <div class="apps-desc">TV ao vivo com canais abertos e fechados, onde você estiver.</div>
+      </div>
+      <div class="apps-card reveal reveal-delay-4">
+        <div class="apps-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="7" y1="3" x2="7" y2="21"/><line x1="17" y1="3" x2="17" y2="21"/><line x1="2" y1="8" x2="7" y2="8"/><line x1="2" y1="16" x2="7" y2="16"/><line x1="17" y1="8" x2="22" y2="8"/><line x1="17" y1="16" x2="22" y2="16"/></svg>
+        </div>
+        <div class="apps-name">UP Cinema</div>
+        <div class="apps-desc">Catálogo de filmes e séries sob demanda, sempre disponível.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section class="about">
   <div class="about-visual reveal from-left">
