@@ -87,6 +87,13 @@ img{max-width:100%;display:block}
 .nav-logo-name{font-family:'Nunito',sans-serif;font-size:22px;font-weight:900;color:white;letter-spacing:-.5px;line-height:1}
 .nav-logo-tagline{font-size:11px;color:rgba(255,255,255,.55);letter-spacing:1.5px;text-transform:uppercase}
 .nav-actions{display:flex;align-items:center;gap:10px}
+.nav-menu{display:flex;align-items:center;gap:10px}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;border:none;background:rgba(255,255,255,.12);border-radius:12px;cursor:pointer;padding:0}
+.nav-burger span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:transform .25s,opacity .2s;margin:0 auto}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .nav-central{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.8);font-size:13px;font-weight:700;padding:8px 14px;border-radius:50px;border:1px solid rgba(255,255,255,.2);transition:all .2s}
 .nav-central:hover{background:rgba(255,255,255,.1);color:white}
 .nav-cta{background:var(--teal);color:white;font-size:14px;font-weight:800;padding:10px 24px;border-radius:50px;transition:all .25s;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap}
@@ -646,6 +653,14 @@ img{max-width:100%;display:block}
 .agendar-float:hover .agendar-float-label{opacity:1;transform:translateX(0)}
 
 @media(max-width:768px){
+  .nav-burger{display:flex}
+  .nav-menu{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:7px;background:var(--blue-dark);padding:14px 16px 18px;box-shadow:0 16px 34px rgba(0,0,0,.45);border-top:1px solid rgba(255,255,255,.08);transform:translateY(-14px);opacity:0;pointer-events:none;transition:transform .25s ease,opacity .25s ease;max-height:calc(100vh - 120px);overflow-y:auto}
+  .nav-menu.open{transform:none;opacity:1;pointer-events:auto}
+  .nav-menu .nav-central,.nav-menu .nav-agendar{width:100%;min-width:0;justify-content:flex-start;border-radius:11px;padding:14px 15px;font-size:14.5px;gap:11px}
+  .nav-menu .nav-central span,.nav-menu .nav-agendar span{display:inline !important;font-size:14.5px}
+  .nav-menu .nav-central{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:#fff}
+  .nav-menu .nav-central svg,.nav-menu .nav-agendar svg{width:19px;height:19px}
+  .nav-menu .nav-agendar{background:rgba(74,127,219,.32);border:1px solid rgba(74,127,219,.65)}
   .agendar{padding:40px 0}
   .agendar .container{padding:0 18px}
   .agendar-box{padding:30px 20px;flex-direction:column;text-align:center;align-items:center}
@@ -688,6 +703,7 @@ img{max-width:100%;display:block}
       <img src="logo-white.png" alt="Portal Net" class="nav-logo-img">
     </a>
     <div class="nav-actions">
+      <div class="nav-menu" id="navMenu">
       <a href="https://portalnetfibra.speedtestcustom.com/" class="nav-central" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 1116 0"/><line x1="12" y1="15" x2="16" y2="10"/><circle cx="12" cy="15" r="1" fill="currentColor" stroke="none"/></svg>
         <span>Teste de Velocidade</span>
@@ -708,7 +724,11 @@ img{max-width:100%;display:block}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
         <span>Agendar</span>
       </a>
-      <a href="https://api.whatsapp.com/send?phone=5562993601651&text=Olá!%20Quero%20contratar%20um%20plano%20Portal%20Net." class="nav-cta" target="_blank"><span class="nav-cta-full">Quero Assinar</span><span class="nav-cta-short">Assinar</span></a>
+      </div>
+      <div class="nav-right">
+        <a href="https://api.whatsapp.com/send?phone=5562993601651&text=Olá!%20Quero%20contratar%20um%20plano%20Portal%20Net." class="nav-cta" target="_blank"><span class="nav-cta-full">Quero Assinar</span><span class="nav-cta-short">Assinar</span></a>
+        <button class="nav-burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false" onclick="toggleNav()"><span></span><span></span><span></span></button>
+      </div>
     </div>
   </div>
 </nav>
@@ -1302,6 +1322,8 @@ function animCount(el){const t=+el.dataset.target,d=1800,s=16,steps=d/s;let i=0;
 
 // FAQ
 function toggleFaq(item){const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open')}
+function toggleNav(){var m=document.getElementById('navMenu'),b=document.getElementById('navBurger');var open=m.classList.toggle('open');b.classList.toggle('open',open);b.setAttribute('aria-expanded',open)}
+document.querySelectorAll('#navMenu a').forEach(function(a){a.addEventListener('click',function(){var m=document.getElementById('navMenu'),b=document.getElementById('navBurger');m.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false')})});
 
 // VIABILIDADE CHAT
 const SHEETS_URL='';
