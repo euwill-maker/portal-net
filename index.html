@@ -587,6 +587,61 @@ img{max-width:100%;display:block}
 .movel-btn:hover{background:rgba(255,255,255,.22);transform:translateY(-2px)}
 .movel-card.featured .movel-btn{background:var(--teal);border-color:var(--teal)}
 .movel-card.featured .movel-btn:hover{background:#E0570D;border-color:#E0570D}
+
+/* ── AGENDAR: link menu ── */
+.nav-agendar{display:flex;align-items:center;gap:6px;color:#fff;font-size:13px;font-weight:800;padding:8px 15px;border-radius:50px;background:rgba(74,127,219,.30);border:1px solid rgba(74,127,219,.75);transition:all .2s;white-space:nowrap}
+.nav-agendar svg{width:16px;height:16px}
+.nav-agendar:hover{background:rgba(74,127,219,.5);color:#fff}
+
+/* ── AGENDAR: CTA animado ── */
+.agendar .container{max-width:1200px;margin:0 auto;padding:0 32px}
+.agendar{padding:56px 0}
+.agendar-box{position:relative;overflow:hidden;border-radius:26px;background:linear-gradient(125deg,#002163 0%,#0b3aa0 55%,#0041BF 100%);padding:44px 38px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;box-shadow:0 26px 60px rgba(0,33,99,.32)}
+.agendar-box::before{content:"";position:absolute;top:-60%;left:-30%;width:80px;height:220%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);transform:rotate(18deg);animation:agShine 4.5s ease-in-out infinite}
+@keyframes agShine{0%{left:-30%}55%{left:130%}100%{left:130%}}
+.agendar-glow{position:absolute;right:-80px;top:-90px;width:280px;height:280px;background:radial-gradient(circle,rgba(255,101,19,.35),transparent 65%);pointer-events:none}
+.agendar-left{position:relative;z-index:2;flex:1;min-width:260px}
+.agendar-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,101,19,.18);border:1px solid rgba(255,101,19,.5);color:#ffb488;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:7px 14px;border-radius:100px;margin-bottom:16px}
+.agendar-pill .live{width:8px;height:8px;border-radius:50%;background:#37e28f;box-shadow:0 0 0 0 rgba(55,226,143,.7);animation:agLive 1.8s infinite}
+@keyframes agLive{0%{box-shadow:0 0 0 0 rgba(55,226,143,.6)}70%{box-shadow:0 0 0 10px rgba(55,226,143,0)}100%{box-shadow:0 0 0 0 rgba(55,226,143,0)}}
+.agendar-left h2{color:#fff;font-size:clamp(23px,3.4vw,32px);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin-bottom:10px}
+.agendar-left h2 span{color:#ff8542}
+.agendar-left p{color:#c2d3f0;font-size:15.5px;max-width:460px}
+.agendar-right{position:relative;z-index:2}
+.btn-agendar{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#002163;font-size:17px;font-weight:800;letter-spacing:-.01em;padding:19px 30px;border-radius:16px;text-decoration:none;white-space:nowrap;box-shadow:0 0 0 0 rgba(255,101,19,.6);animation:agPulse 2.2s infinite;transition:transform .18s ease}
+.btn-agendar:hover{transform:translateY(-3px) scale(1.02)}
+.btn-agendar .ico{display:flex;width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#FF6513,#ff8f4d);align-items:center;justify-content:center;flex-shrink:0}
+.btn-agendar .ico svg{width:21px;height:21px;color:#fff}
+.btn-agendar .arw{transition:transform .18s ease}
+.btn-agendar:hover .arw{transform:translateX(4px)}
+@keyframes agPulse{0%{box-shadow:0 0 0 0 rgba(255,101,19,.5)}70%{box-shadow:0 0 0 16px rgba(255,101,19,0)}100%{box-shadow:0 0 0 0 rgba(255,101,19,0)}}
+
+/* ── AGENDAR: botão flutuante ── */
+.agendar-float{position:fixed;bottom:102px;right:24px;z-index:9997;width:58px;height:58px;background:linear-gradient(135deg,#0041BF,#4A7FDB);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(0,65,191,.5);transition:all .25s;animation:agFloatPulse 2.5s infinite}
+.agendar-float:hover{transform:scale(1.1);box-shadow:0 10px 32px rgba(0,65,191,.65);animation:none}
+.agendar-float svg{width:28px;height:28px;color:#fff}
+@keyframes agFloatPulse{0%{box-shadow:0 6px 24px rgba(0,65,191,.5),0 0 0 0 rgba(74,127,219,.5)}70%{box-shadow:0 6px 24px rgba(0,65,191,.5),0 0 0 14px rgba(74,127,219,0)}100%{box-shadow:0 6px 24px rgba(0,65,191,.5),0 0 0 0 rgba(74,127,219,0)}}
+.agendar-float-label{position:absolute;right:70px;background:#002163;color:#fff;font-size:13px;font-weight:700;padding:8px 16px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transform:translateX(8px);transition:all .25s}
+.agendar-float-label::after{content:'';position:absolute;right:-6px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-right:none;border-left-color:#002163}
+.agendar-float:hover .agendar-float-label{opacity:1;transform:translateX(0)}
+
+@media(max-width:768px){
+  .agendar{padding:40px 0}
+  .agendar .container{padding:0 18px}
+  .agendar-box{padding:30px 20px;flex-direction:column;text-align:center;align-items:center}
+  .agendar-left{min-width:0;width:100%}
+  .agendar-left h2{font-size:22px}
+  .agendar-left p{margin:0 auto}
+  .agendar-right{width:100%}
+  .btn-agendar{width:100%;justify-content:center;white-space:normal;font-size:15.5px;padding:16px 18px;line-height:1.25}
+  .btn-agendar .arw{display:none}
+  .nav-agendar span{display:none}
+  .nav-agendar{padding:8px;min-width:36px;justify-content:center}
+  .agendar-float{bottom:82px;right:14px;width:52px;height:52px}
+  .agendar-float svg{width:26px;height:26px}
+  .agendar-float-label{display:none}
+}
+@media(prefers-reduced-motion:reduce){.agendar-box::before,.btn-agendar,.agendar-pill .live,.agendar-float{animation:none}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Portal Net","description":"Provedor de internet fibra óptica em Aparecida de Goiânia - GO. 100% fibra, Wifi 6 e sem fidelidade.","url":"https://euwill-maker.github.io/portal-net/","telephone":"+5562993601651","email":"comercial@portalnetfibra.com.br","priceRange":"R$99,90-R$179,90/mês","address":{"@type":"PostalAddress","streetAddress":"Rua H 135, Quadra 294, Lote 6, Casa 1, Vera Cruz I","addressLocality":"Aparecida de Goiânia","addressRegion":"GO","postalCode":"74936-230","addressCountry":"BR"},"areaServed":[{"@type":"City","name":"Aparecida de Goiânia, GO"}],"sameAs":["https://www.instagram.com/portal_net/","https://www.facebook.com/internetfibraportalnet"]}</script>
 </head>
@@ -628,6 +683,10 @@ img{max-width:100%;display:block}
       <a href="#vagas" class="nav-central">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
         <span>Vagas</span>
+      </a>
+      <a href="contratar.html" class="nav-agendar" title="Agendar instalação online">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
+        <span>Agendar</span>
       </a>
       <a href="https://api.whatsapp.com/send?phone=5562993601651&text=Olá!%20Quero%20contratar%20um%20plano%20Portal%20Net." class="nav-cta" target="_blank"><span class="nav-cta-full">Quero Assinar</span><span class="nav-cta-short">Assinar</span></a>
     </div>
@@ -784,6 +843,27 @@ img{max-width:100%;display:block}
       <div class="plan-price">R$179<span style="font-size:22px">,90</span></div>
       <div class="plan-price-note">Valor fixo / mês</div>
       <a href="https://api.whatsapp.com/send?phone=5562993601651&text=Olá!%20Quero%20o%20plano%20PREMIUM%201000MB%20da%20Portal%20Net." class="btn-plan" target="_blank">Quero esse plano</a>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDAR INSTALAÇÃO -->
+<section class="agendar">
+  <div class="container">
+    <div class="agendar-box reveal">
+      <div class="agendar-glow" aria-hidden="true"></div>
+      <div class="agendar-left">
+        <div class="agendar-pill"><span class="live"></span> Atendimento online 24h</div>
+        <h2>Já escolheu seu plano?<br><span>Agende sua instalação online.</span></h2>
+        <p>Sem espera e sem ligação. Você escolhe o plano, o dia e o horário — e nossa equipe já entra em contato pra confirmar.</p>
+      </div>
+      <div class="agendar-right">
+        <a href="contratar.html" class="btn-agendar">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></span>
+          Quero agendar minha instalação
+          <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1103,6 +1183,12 @@ img{max-width:100%;display:block}
     <p class="footer-copy">© 2026 Portal Net Telecomunicações LTDA · CNPJ 10.303.252/0001-43 · Aparecida de Goiânia, GO</p>
   </div>
 </footer>
+
+<!-- AGENDAR FLOAT -->
+<a class="agendar-float" href="contratar.html" aria-label="Agendar instalação online">
+  <span class="agendar-float-label">Agende sua instalação</span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
+</a>
 
 <!-- WHATSAPP FLOAT -->
 <a class="whatsapp-float" href="https://api.whatsapp.com/send?phone=5562993601651&text=Olá!%20Quero%20contratar%20um%20plano%20Portal%20Net." target="_blank" aria-label="Fale no WhatsApp">
