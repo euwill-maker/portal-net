@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal Net — Internet Fibra Óptica em Aparecida de Goiânia</title>
+<meta name="description" content="Internet fibra óptica em Aparecida de Goiânia, Goiânia e Região. Planos a partir de R$99,90/mês, 100% fibra óptica, Wi-Fi 6 e streamings inclusos.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<meta property="og:title" content="Portal Net — Internet Fibra Óptica em Aparecida de Goiânia">
+<meta property="og:description" content="Fibra óptica em Aparecida de Goiânia, Goiânia e Região. Planos a partir de R$99,90/mês, Wi-Fi 6 e streamings inclusos.">
+<meta property="og:image" content="https://euwill-maker.github.io/portal-net/hero.jpg">
+<meta property="og:url" content="https://euwill-maker.github.io/portal-net/v2.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Portal Net">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://euwill-maker.github.io/portal-net/hero.jpg">
+<link rel="preload" as="image" href="hero-mobile.jpg" media="(max-width:900px)">
+<link rel="preload" as="image" href="hero.jpg" media="(min-width:901px)">
+<style>
+:root{
+  --ink:#0B1E3F;
+  --navy:#002163;
+  --blue:#0041BF;
+  --orange:#FF6513;
+  --muted:#5A6A88;
+  --soft:#8A99B5;
+  --line:#E6EBF2;
+  --bg-soft:#F7F9FC;
+  --white:#ffffff;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',system-ui,sans-serif;color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+h1,h2,h3{font-family:'Outfit',sans-serif;font-weight:600;letter-spacing:-0.025em;line-height:1.08}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.lead{font-size:16px;line-height:1.65;color:var(--muted)}
+
+/* BOTOES */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:54px;padding:0 26px;border-radius:100px;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;cursor:pointer;border:none;transition:transform .15s ease,background .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-orange{background:var(--orange);color:var(--navy)}
+.btn-orange:hover{background:#FF7A33}
+.btn-ghost{background:var(--white);border:1.5px solid #D6DEEA;color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-navy{background:var(--ink);color:var(--white)}
+.btn-navy:hover{background:#13294f}
+.btn-sm{min-height:44px;font-size:14px;padding:0 20px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1140px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.nav-logo img{height:34px;width:auto;display:block}
+.nav-right{display:flex;align-items:center;gap:8px}
+.nav-menu{display:none}
+.nav-menu a{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 12px;border-radius:10px;font-size:14px;font-weight:700;color:var(--muted)}
+.nav-menu a:hover{color:var(--ink);background:var(--bg-soft)}
+.nav-burger{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;background:var(--white);border:1px solid var(--line);border-radius:12px;cursor:pointer}
+.nav-drawer{display:none;border-top:1px solid var(--line);background:var(--white);padding:8px 20px 16px}
+.nav-drawer.open{display:block}
+.nav-drawer a{display:flex;align-items:center;gap:10px;min-height:52px;font-size:15px;font-weight:700;color:var(--ink);border-bottom:1px solid var(--line)}
+.nav-drawer a:last-child{border-bottom:none}
+
+/* HERO */
+.hero{padding:44px 0 0}
+.hero-grid{display:flex;flex-direction:column;gap:0}
+.hero h1{font-size:40px;margin-top:16px;color:var(--ink)}
+.hero h1 .hl{color:var(--blue)}
+.hero .lead{margin-top:18px}
+.hero-ctas{display:flex;flex-direction:column;gap:10px;margin-top:28px}
+.hero-media{position:relative;margin:38px 0 0}
+.hero-media img{width:100%;height:270px;object-fit:cover;border-radius:26px;display:block}
+.hero-badge{position:absolute;left:14px;bottom:-26px;background:var(--white);border:1px solid var(--line);box-shadow:0 14px 34px rgba(11,30,63,.12);border-radius:18px;padding:13px 18px;display:flex;align-items:center;gap:12px}
+.hero-badge-n{font-family:'Outfit',sans-serif;font-size:27px;font-weight:600;letter-spacing:-.02em}
+.hero-badge-t{font-size:12px;font-weight:700;color:var(--muted);line-height:1.35}
+
+/* TRUST STRIP */
+.trust{margin-top:64px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-soft)}
+.trust-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0}
+.trust-item{display:flex;align-items:center;gap:10px;padding:18px 20px;font-size:13px;font-weight:700;color:var(--ink);border-bottom:1px solid var(--line)}
+.trust-item:nth-child(odd){border-right:1px solid var(--line)}
+.trust-item:nth-last-child(-n+2){border-bottom:none}
+.trust-item svg{flex-shrink:0;color:var(--orange)}
+
+/* SECOES */
+.sec{padding:64px 0}
+.sec-soft{background:var(--bg-soft)}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 36px}
+.sec-head h2{font-size:32px;margin-top:12px}
+.sec-head .lead{margin-top:14px}
+
+/* PLANOS */
+.plans{display:grid;grid-template-columns:1fr;gap:16px}
+.plan{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:28px;position:relative;display:flex;flex-direction:column}
+.plan.hot{background:var(--ink);border-color:var(--ink)}
+.plan-badge{position:absolute;top:-12px;left:28px;background:var(--orange);color:var(--navy);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border-radius:100px}
+.plan-name{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.plan.hot .plan-name{color:#93A7C6}
+.plan-speed{display:flex;align-items:baseline;gap:6px;margin-top:8px}
+.plan-speed b{font-family:'Outfit',sans-serif;font-size:50px;font-weight:600;letter-spacing:-.03em;line-height:1}
+.plan.hot .plan-speed b{color:var(--white)}
+.plan-speed span{font-size:15px;font-weight:800;color:var(--soft)}
+.plan.hot .plan-speed span{color:#93A7C6}
+.plan-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.plan-tags span{font-size:12px;font-weight:700;color:var(--muted);background:#F1F5FA;border-radius:100px;padding:7px 13px}
+.plan.hot .plan-tags span{color:#DCE6F5;background:rgba(255,255,255,.10)}
+.plan-apps{display:flex;align-items:center;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.plan.hot .plan-apps{border-top-color:rgba(255,255,255,.14)}
+.plan-apps img{height:15px;width:auto;opacity:.85}
+.plan-foot{margin-top:auto;padding-top:24px;display:flex;align-items:flex-end;justify-content:space-between;gap:14px}
+.plan-price{font-family:'Outfit',sans-serif;font-size:32px;font-weight:600;letter-spacing:-.02em}
+.plan.hot .plan-price{color:var(--white)}
+.plan-note{font-size:12px;font-weight:700;color:var(--soft);margin-top:2px}
+.plan.hot .plan-note{color:#93A7C6}
+.plan-cta{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:100px;font-weight:800;font-size:14px;border:1.5px solid var(--ink);color:var(--ink)}
+.plan-cta:hover{background:var(--ink);color:var(--white)}
+.plan.hot .plan-cta{background:var(--orange);color:var(--navy);border-color:var(--orange)}
+.plan.hot .plan-cta:hover{background:#FF7A33;color:var(--navy)}
+
+/* AGENDAR */
+.agendar-box{background:var(--ink);border-radius:28px;padding:38px 28px;display:flex;flex-direction:column;gap:22px}
+.agendar-box h2{font-size:28px;color:var(--white)}
+.agendar-box h2 span{color:#FF9A4D}
+.agendar-box p{font-size:15px;line-height:1.6;color:#B9C9E2;margin-top:12px}
+
+/* VIABILIDADE */
+.via-sec{text-align:center}
+.via-sec h2{font-size:32px;margin-top:12px}
+.via-sec h2 span{color:var(--blue)}
+
+/* STATS */
+.stats-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.stat{background:var(--white);padding:28px 16px;text-align:center}
+.stat-n{font-family:'Outfit',sans-serif;font-size:38px;font-weight:600;color:var(--ink);letter-spacing:-.03em;line-height:1}
+.stat-n i{font-style:normal;font-size:22px;color:var(--orange)}
+.stat-l{font-size:12px;font-weight:700;color:var(--muted);margin-top:8px;line-height:1.4}
+
+/* APPS */
+.apps-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.app-card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:22px 18px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
+.app-card img{height:22px;width:auto}
+.app-card .nm{font-family:'Outfit',sans-serif;font-size:19px;font-weight:600;color:var(--ink)}
+.app-card p{font-size:12px;line-height:1.5;color:var(--muted)}
+
+/* ABOUT */
+.about-grid{display:flex;flex-direction:column;gap:28px}
+.about-img img{width:100%;height:280px;object-fit:cover;border-radius:26px;display:block}
+.about h2{font-size:32px;margin-top:12px}
+.about h2 span{color:var(--blue)}
+.about p{font-size:15px;line-height:1.7;color:var(--muted);margin-top:14px}
+.about-list{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:12px}
+.about-list li{display:flex;gap:11px;font-size:14px;font-weight:700;color:var(--ink);line-height:1.45}
+.about-list svg{flex-shrink:0;color:var(--orange);margin-top:2px}
+
+/* COBERTURA */
+.cob-card{background:var(--ink);border-radius:28px;padding:34px 26px;color:var(--white)}
+.cob-card h2{font-size:30px;color:var(--white);margin-top:12px}
+.cob-card h2 span{color:#FF9A4D}
+.cob-card p{font-size:15px;line-height:1.6;color:#B9C9E2;margin-top:14px}
+.cob-cities{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.cob-cities span{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#DCE6F5;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:9px 15px}
+
+/* DEPOIMENTOS */
+.google-line{display:inline-flex;align-items:center;gap:10px;background:var(--white);border:1px solid var(--line);border-radius:100px;padding:10px 18px;font-size:13px;font-weight:700;color:var(--ink);margin-top:14px}
+.stars{color:#FFAE0C;letter-spacing:1px}
+.depo-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.depo{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:26px}
+.depo p{font-size:15px;line-height:1.65;color:var(--muted);margin-top:12px}
+.depo-who{display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.depo-ini{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:#EAF0FA;color:var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:16px;font-weight:600}
+.depo-nm{font-size:14px;font-weight:800;color:var(--ink)}
+.depo-lc{font-size:12px;font-weight:600;color:var(--soft);margin-top:2px}
+
+/* FAQ */
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:60px;padding:16px 22px;background:none;border:none;cursor:pointer;font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;color:var(--ink);text-align:left}
+.faq-q svg{flex-shrink:0;color:var(--soft);transition:transform .25s ease}
+.faq-item.open .faq-q svg{transform:rotate(45deg);color:var(--orange)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-item.open .faq-a{max-height:320px}
+.faq-a p{padding:0 22px 20px;font-size:14px;line-height:1.7;color:var(--muted)}
+
+/* VAGAS */
+.jobs-card{background:var(--white);border:1px solid var(--line);border-radius:26px;padding:28px 22px;max-width:760px;margin:0 auto}
+.jobs-row{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:16px}
+.jobs-field label{display:block;font-size:13px;font-weight:800;color:var(--ink);margin-bottom:7px}
+.jobs-field input,.jobs-field select,.jobs-field textarea{width:100%;min-height:52px;padding:14px 16px;border:1.5px solid #D6DEEA;border-radius:14px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:600;color:var(--ink);background:var(--white)}
+.jobs-field textarea{min-height:110px;resize:vertical}
+.jobs-field input:focus,.jobs-field select:focus,.jobs-field textarea:focus{outline:none;border-color:var(--blue)}
+.jobs-field input::placeholder,.jobs-field textarea::placeholder{color:#A6B3CA;font-weight:600}
+.jobs-file-input{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
+.jobs-file-label{display:flex;align-items:center;justify-content:center;gap:10px;min-height:64px;border:1.5px dashed #C3D0E4;border-radius:14px;cursor:pointer;font-size:14px;font-weight:700;color:var(--muted);text-align:center;padding:12px}
+.jobs-file-label:hover{border-color:var(--blue);color:var(--blue)}
+.jobs-file-label.has-file{border-style:solid;border-color:var(--orange);color:var(--ink)}
+.jobs-submit{display:flex;justify-content:center;margin-top:22px}
+.jobs-note{font-size:12px;line-height:1.55;color:var(--soft);text-align:center;margin-top:16px}
+.jobs-success{display:none;text-align:center;padding:16px 8px}
+.jobs-success-icon{font-size:40px}
+.jobs-success h3{font-size:24px;margin-top:12px}
+.jobs-success p{font-size:14px;line-height:1.6;color:var(--muted);margin-top:10px}
+
+/* FOOTER */
+.footer{background:var(--ink);color:var(--white);padding:48px 0 34px;text-align:center}
+.footer img.lg{height:40px;width:auto}
+.footer-tag{font-size:14px;line-height:1.6;color:#B9C9E2;margin-top:18px}
+.footer-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+.footer-btn{display:inline-flex;align-items:center;gap:9px;min-height:46px;padding:0 20px;border-radius:100px;font-size:14px;font-weight:800;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);color:var(--white)}
+.footer-btn:hover{background:rgba(255,255,255,.18)}
+.footer-sep{height:1px;background:rgba(255,255,255,.14);margin:30px 0}
+.footer-lb{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:12px}
+.footer-copy{font-size:12px;line-height:1.7;color:rgba(255,255,255,.5);margin-top:26px}
+
+/* FLOATS */
+.float-wa{position:fixed;right:16px;bottom:16px;z-index:80;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(37,211,102,.4)}
+.float-ag{position:fixed;right:16px;bottom:82px;z-index:80;width:56px;height:56px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,65,191,.36)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.btn:hover{transform:none}}
+
+/* DESKTOP */
+@media(min-width:900px){
+  .nav-menu{display:flex;align-items:center;gap:4px}
+  .nav-burger{display:none}
+  .hero{padding:72px 0 0}
+  .hero-grid{flex-direction:row;align-items:center;gap:56px}
+  .hero-col{flex:1 1 0;min-width:0}
+  .hero h1{font-size:60px}
+  .hero .lead{font-size:18px;max-width:520px}
+  .hero-ctas{flex-direction:row}
+  .hero-media{margin-top:0}
+  .hero-media img{height:440px}
+  .trust-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .trust-item{border-bottom:none;justify-content:center}
+  .trust-item:nth-child(odd){border-right:1px solid var(--line)}
+  .trust-item:not(:last-child){border-right:1px solid var(--line)}
+  .sec{padding:92px 0}
+  .sec-head h2{font-size:44px}
+  .plans{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+  .agendar-box{flex-direction:row;align-items:center;justify-content:space-between;padding:46px 44px}
+  .agendar-box h2{font-size:34px}
+  .stats-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .stat-n{font-size:46px}
+  .apps-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .about-grid{flex-direction:row;align-items:center;gap:56px}
+  .about-col{flex:1 1 0;min-width:0}
+  .about-img img{height:420px}
+  .about h2{font-size:42px}
+  .cob-card{padding:52px 48px}
+  .cob-card h2{font-size:38px}
+  .depo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .jobs-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .jobs-row .full{grid-column:1 / -1}
+  .float-wa{right:24px;bottom:24px}
+  .float-ag{right:24px;bottom:92px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="Portal Net"><img src="logo.png" alt="Portal Net"></a>
+    <nav class="nav-menu" aria-label="Menu principal">
+      <a href="https://portalnetfibra.speedtestcustom.com/" target="_blank" rel="noopener">Teste de Velocidade</a>
+      <a href="https://adm.portalnetfibra.com.br/central_assinante_web/login" target="_blank" rel="noopener">Central do Assinante</a>
+      <a href="#contratos">Contratos</a>
+      <a href="#vagas">Vagas</a>
+    </nav>
+    <div class="nav-right">
+      <a href="contratar.html" class="btn btn-orange btn-sm">Assinar</a>
+      <button type="button" class="nav-burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navDrawer" onclick="toggleNav()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B1E3F" stroke-width="2.4" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav-drawer" id="navDrawer">
+    <a href="https://portalnetfibra.speedtestcustom.com/" target="_blank" rel="noopener">Teste de Velocidade</a>
+    <a href="https://adm.portalnetfibra.com.br/central_assinante_web/login" target="_blank" rel="noopener">Central do Assinante</a>
+    <a href="#planos">Planos</a>
+    <a href="#contratos">Contratos</a>
+    <a href="#vagas">Vagas</a>
+    <a href="contratar.html">Agendar instalação</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-col">
+        <div class="eyebrow">Aparecida de Goiânia · Goiânia e Região</div>
+        <h1>Internet que não cai<br class="d-br">quando você<br><span class="hl">mais precisa.</span></h1>
+        <p class="lead">Fibra óptica 100%, Wi-Fi 6 incluso e instalação grátis. Suporte ágil, com gente de verdade aqui da região.</p>
+        <div class="hero-ctas">
+          <a href="#planos" class="btn btn-orange">Ver planos e preços</a>
+          <a href="#cobertura" class="btn btn-ghost">Consultar minha rua</a>
+        </div>
+      </div>
+      <div class="hero-col">
+        <div class="hero-media">
+          <picture>
+            <source media="(min-width:901px)" srcset="hero.jpg">
+            <img src="hero-mobile.jpg" alt="Cliente da Portal Net usando internet em casa" fetchpriority="high">
+          </picture>
+          <div class="hero-badge">
+            <div class="hero-badge-n">+5 mil</div>
+            <div class="hero-badge-t">famílias conectadas<br>em Aparecida</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="wrap" style="padding:0">
+    <div class="trust-grid">
+      <div class="trust-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg> Fibra óptica 100%</div>
+      <div class="trust-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h8"/></svg> Wi-Fi 6 incluso</div>
+      <div class="trust-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M2 20h20M10 8l4 2-4 2z"/></svg> Streamings inclusos</div>
+      <div class="trust-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3z"/><path d="M3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg> Suporte humanizado</div>
+    </div>
+  </div>
+</div>
+
+<!-- PLANOS -->
+<section class="sec sec-soft" id="planos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Planos residenciais</div>
+      <h2>Escolha o seu.</h2>
+      <p class="lead">Instalação grátis, sem fidelidade e com o preço que você contratou todo mês.</p>
+    </div>
+    <div class="plans">
+
+      <article class="plan reveal">
+        <div class="plan-name">Plano Família</div>
+        <div class="plan-speed"><b>750</b><span>MEGA</span></div>
+        <div class="plan-tags"><span>Wi-Fi 6</span><span>Instalação grátis</span></div>
+        <div class="plan-foot">
+          <div>
+            <div class="plan-price">R$ 99,90</div>
+            <div class="plan-note">por mês · consulte condições</div>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=5562993601651&text=Ol%C3%A1!%20Quero%20o%20plano%20FAM%C3%8DLIA%20750MB%20da%20Portal%20Net." class="plan-cta" target="_blank" rel="noopener">Quero</a>
+        </div>
+      </article>
+
+      <article class="plan hot reveal">
+        <div class="plan-badge">Mais vendido</div>
+        <div class="plan-name" style="margin-top:6px">Plano Exclusivo</div>
+        <div class="plan-speed"><b>850</b><span>MEGA</span></div>
+        <div class="plan-tags"><span>Wi-Fi 6</span><span>2 roteadores</span><span>HBO Max</span><span>Telecine</span><span>Watch TV</span><span>UP Cinema</span><span>Instalação grátis</span></div>
+        <div class="plan-apps">
+          <img src="app-hbomax.png" alt="HBO Max">
+          <img src="telecine-app.png" alt="Telecine">
+          <img src="app-watchtv.png" alt="Watch TV">
+        </div>
+        <div class="plan-foot">
+          <div>
+            <div class="plan-price">R$ 149,90</div>
+            <div class="plan-note">por mês · consulte condições</div>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=5562993601651&text=Ol%C3%A1!%20Quero%20o%20plano%20EXCLUSIVO%20850MB%20da%20Portal%20Net." class="plan-cta" target="_blank" rel="noopener">Quero</a>
+        </div>
+      </article>
+
+      <article class="plan reveal">
+        <div class="plan-name">Plano Premium</div>
+        <div class="plan-speed"><b>1</b><span>GIGA · 1000 MEGA</span></div>
+        <div class="plan-tags"><span>Wi-Fi 6</span><span>2 roteadores</span><span>HBO Max</span><span>Telecine</span><span>Watch TV</span><span>UP Cinema</span><span>Instalação grátis</span></div>
+        <div class="plan-foot">
+          <div>
+            <div class="plan-price">R$ 179,90</div>
+            <div class="plan-note">por mês · consulte condições</div>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=5562993601651&text=Ol%C3%A1!%20Quero%20o%20plano%20PREMIUM%201000MB%20da%20Portal%20Net." class="plan-cta" target="_blank" rel="noopener">Quero</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- AGENDAR -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="agendar-box reveal">
+      <div>
+        <h2>Já escolheu seu plano?<br><span>Agende sua instalação online.</span></h2>
+        <p>Sem espera e sem ligação. Você escolhe o plano, o dia e o horário — e nossa equipe entra em contato pra confirmar.</p>
+      </div>
+      <a href="contratar.html" class="btn btn-orange" style="flex-shrink:0">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
+        Quero agendar
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="stats-grid reveal">
+      <div class="stat"><div class="stat-n"><span class="count" data-target="100">0</span><i>%</i></div><div class="stat-l">Fibra óptica real,<br>sem enrolação</div></div>
+      <div class="stat"><div class="stat-n"><span class="count" data-target="99">0</span><i>%</i></div><div class="stat-l">Conexão estável<br>o tempo todo</div></div>
+      <div class="stat"><div class="stat-n"><i>Wi-Fi</i> <span class="count" data-target="6">0</span></div><div class="stat-l">Equipamento de<br>alta tecnologia</div></div>
+      <div class="stat"><div class="stat-n"><span class="count" data-target="1000">0</span><i>MEGA</i></div><div class="stat-l">Velocidade de<br>fibra real</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPS -->
+<section class="sec sec-soft">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Apps inclusos</div>
+      <h2>Streaming e apps no seu plano.</h2>
+      <p class="lead">Entretenimento sem custo extra: filmes, séries e TV ao vivo direto no seu celular ou Smart TV. Inclusos nos planos Exclusivo e Premium.</p>
+    </div>
+    <div class="apps-grid">
+      <div class="app-card reveal"><img src="app-hbomax.png" alt="HBO Max"><p>Séries, filmes e produções originais HBO, tudo em um só app.</p></div>
+      <div class="app-card reveal"><img src="app-telecine.png" alt="Telecine"><p>Grandes lançamentos e clássicos do cinema, direto no seu plano.</p></div>
+      <div class="app-card reveal"><img src="app-watchtv.png" alt="Watch TV"><p>TV ao vivo com canais abertos e fechados, onde você estiver.</p></div>
+      <div class="app-card reveal"><div class="nm">UP Cinema</div><p>Catálogo de filmes e séries sob demanda, sempre disponível.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-col about-img reveal">
+        <img src="team.jpg" alt="Equipe da Portal Net">
+      </div>
+      <div class="about-col reveal">
+        <div class="eyebrow">Quem somos</div>
+        <h2>Conectando pessoas<br><span>desde 2017.</span></h2>
+        <p>Fundada em 2017, a Portal Net nasceu com um propósito simples: oferecer internet de qualidade com um atendimento que faz a diferença na vida das pessoas.</p>
+        <p>Ao longo dos anos, investimos em tecnologia, infraestrutura e em uma equipe comprometida em entregar uma conexão rápida, estável e um atendimento próximo, ágil e humanizado.</p>
+        <p>Hoje, mais de <strong style="color:var(--ink)">5 mil clientes</strong> confiam na Portal Net todos os dias. Seguimos crescendo sem abrir mão dos nossos valores: honestidade, compromisso, inovação e respeito pelas pessoas.</p>
+        <ul class="about-list">
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Fibra óptica 100% — sem cobranças surpresa</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Wi-Fi 6 incluso — sinal mais estável em toda a casa</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Mais de 5 mil clientes atendidos com preço justo</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Rapidez no suporte, atendimento humano</li>
+        </ul>
+        <a href="https://api.whatsapp.com/send?phone=5562993601651&text=Ol%C3%A1!%20Quero%20falar%20com%20a%20Portal%20Net." class="btn btn-navy" style="margin-top:26px" target="_blank" rel="noopener">Falar com a gente</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COBERTURA -->
+<section class="sec sec-soft" id="cobertura" style="padding-top:0;background:var(--white)">
+  <div class="wrap">
+    <div class="cob-card reveal">
+      <div class="eyebrow" style="color:rgba(255,255,255,.5)">Área de cobertura</div>
+      <h2>Onde estamos<br><span>em Goiás.</span></h2>
+      <p>Atendemos Aparecida de Goiânia, Goiânia e região com fibra óptica de alta qualidade. Consulte a viabilidade no seu endereço.</p>
+      <div class="cob-cities">
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Aparecida de Goiânia</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Goiânia</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Região metropolitana</span>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5562993601651&text=Ol%C3%A1!%20Quero%20consultar%20a%20viabilidade%20da%20Portal%20Net%20na%20minha%20rua." class="btn btn-orange" style="margin-top:28px" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Consultar meu endereço
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="sec sec-soft">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Depoimentos</div>
+      <h2>O que nossos clientes falam.</h2>
+      <a class="google-line" href="https://www.google.com/search?q=Portal+Net+Aparecida+de+Goi%C3%A2nia" target="_blank" rel="noopener">
+        <span class="stars">★★★★★</span> 5.0 no Google — ver avaliações
+      </a>
+    </div>
+    <div class="depo-grid">
+      <article class="depo reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Já uso a Portal Net há meses e o preço não mudou. Internet rápida, sem quedas. Nunca precisei chamar o suporte!”</p>
+        <div class="depo-who"><div class="depo-ini" aria-hidden="true">MO</div><div><div class="depo-nm">Marcos Oliveira</div><div class="depo-lc">Aparecida de Goiânia, GO</div></div></div>
+      </article>
+      <article class="depo reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Instalação rápida, técnico atencioso. O Wi-Fi 6 do plano foi um diferencial — sinal muito mais estável em casa!”</p>
+        <div class="depo-who"><div class="depo-ini" aria-hidden="true">AS</div><div><div class="depo-nm">Ana Paula Souza</div><div class="depo-lc">Vera Cruz I, Aparecida de Goiânia</div></div></div>
+      </article>
+      <article class="depo reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Home office perfeito com a Portal Net. Estabilidade total, nunca cai, preço fixo. Melhor decisão que tomei.”</p>
+        <div class="depo-who"><div class="depo-ini" aria-hidden="true">RS</div><div><div class="depo-nm">Ricardo Santos</div><div class="depo-lc">Aparecida de Goiânia, GO</div></div></div>
+      </article>
+      <article class="depo reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Troquei meu provedor antigo e foi a melhor decisão. Velocidade real e sinal que nunca cai na minha região.”</p>
+        <div class="depo-who"><div class="depo-ini" aria-hidden="true">JF</div><div><div class="depo-nm">Juliana Ferreira</div><div class="depo-lc">Aparecida de Goiânia, GO</div></div></div>
+      </article>
+      <article class="depo reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Atendimento incrível, instalação no mesmo dia. Recomendo pra todo mundo aqui de Aparecida!”</p>
+        <div class="depo-who"><div class="depo-ini" aria-hidden="true">CM</div><div><div class="depo-nm">Carlos Mendes</div><div class="depo-lc">Aparecida de Goiânia, GO</div></div></div>
+      </article>
+      <article class="depo reveal">
+        <div class="stars">★★★★★</div>
+        <p>“Sem fidelidade e sem pegadinha no contrato. Foi exatamente o que prometeram desde o primeiro dia.”</p>
+        <div class="depo-who"><div class="depo-ini" aria-hidden="true">FL</div><div><div class="depo-nm">Fernanda Lima</div><div class="depo-lc">Vera Cruz I, Aparecida de Goiânia</div></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Dúvidas frequentes</div>
+      <h2>Perguntas frequentes.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">O preço realmente não aumenta?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><p>Sim! O valor fixo é uma garantia real da Portal Net. O preço que você contrata é o mesmo que vai pagar todo mês, sem reajustes.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">A instalação é rápida?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><p>Sim! Normalmente fazemos a instalação em até 24 horas úteis após a confirmação do cadastro. Nosso técnico agenda a visita e instala a fibra óptica completa na sua casa.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">O que é o Wi-Fi 6 incluso?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><p>Nossos roteadores usam Wi-Fi 6, o padrão mais moderno — mais estabilidade e alcance de sinal em toda a casa, sem custo extra.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Como funciona o suporte?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="faq-a"><p>Nossa equipe é rápida no atendimento e resolve qualquer problema técnico pelo WhatsApp ou com visita presencial quando necessário.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VAGAS -->
+<section class="sec sec-soft" id="vagas">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Faça parte do time</div>
+      <h2>Trabalhe conosco.</h2>
+      <p class="lead">Nosso futuro é construído por pessoas que fazem a diferença todos os dias.</p>
+    </div>
+    <div class="jobs-card reveal">
+      <form id="jobsForm" action="https://formsubmit.co/comercial@portalnetfibra.com.br" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="Nova candidatura — Portal Net">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://euwill-maker.github.io/portal-net/v2.html?candidatura=ok#vagas">
+        <input type="hidden" name="_template" value="table">
+        <div class="jobs-row">
+          <div class="jobs-field">
+            <label for="jobNome">Nome completo *</label>
+            <input type="text" id="jobNome" name="nome" required placeholder="Seu nome" autocomplete="name">
+          </div>
+          <div class="jobs-field">
+            <label for="jobTel">WhatsApp *</label>
+            <input type="tel" id="jobTel" name="whatsapp" required placeholder="(62) 99999-9999" autocomplete="tel">
+          </div>
+        </div>
+        <div class="jobs-row">
+          <div class="jobs-field">
+            <label for="jobEmail">E-mail *</label>
+            <input type="email" id="jobEmail" name="email" required placeholder="seu@email.com" autocomplete="email">
+          </div>
+          <div class="jobs-field">
+            <label for="jobArea">Área de interesse *</label>
+            <select id="jobArea" name="area" required>
+              <option value="">Selecione...</option>
+              <option>Técnico de fibra óptica</option>
+              <option>Atendimento ao cliente</option>
+              <option>Comercial / Vendas</option>
+              <option>TI / Suporte técnico</option>
+              <option>Administrativo</option>
+              <option>Outra área</option>
+            </select>
+          </div>
+        </div>
+        <div class="jobs-row">
+          <div class="jobs-field full">
+            <label for="jobMsg">Fale um pouco sobre você</label>
+            <textarea id="jobMsg" name="mensagem" placeholder="Sua experiência, disponibilidade de horário..."></textarea>
+          </div>
+        </div>
+        <div class="jobs-row">
+          <div class="jobs-field full">
+            <label for="jobCurriculo">Currículo (PDF, DOC, DOCX)</label>
+            <div style="position:relative">
+              <input type="file" id="jobCurriculo" name="curriculo" accept=".pdf,.doc,.docx" class="jobs-file-input" onchange="atualizarArquivo(this)">
+              <label for="jobCurriculo" class="jobs-file-label">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span id="jobsFileName">Clique para selecionar o arquivo</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="jobs-submit">
+          <button type="submit" class="btn btn-orange">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+            Enviar candidatura
+          </button>
+        </div>
+        <p class="jobs-note">Seu currículo será enviado diretamente para o RH da Portal Net. Respondemos em até 3 dias úteis.</p>
+      </form>
+      <div class="jobs-success" id="jobsSuccess">
+        <div class="jobs-success-icon">✅</div>
+        <h3>Candidatura enviada!</h3>
+        <p>Obrigado pelo interesse. Analisaremos seu perfil e entraremos em contato em breve pelo WhatsApp informado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <img class="lg" src="logo-white.png" alt="Portal Net">
+    <p class="footer-tag">Contrate agora, nos siga no Instagram<br>e garanta um brinde especial. 🎁</p>
+    <div class="footer-btns">
+      <a class="footer-btn" href="https://www.instagram.com/portal_net/" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @portal_net
+      </a>
+      <a class="footer-btn" href="https://api.whatsapp.com/send?phone=5562993601651&text=Ol%C3%A1!%20Quero%20contratar%20a%20Portal%20Net." target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        (62) 9 9360-1651
+      </a>
+    </div>
+    <div class="footer-sep"></div>
+    <div id="contratos">
+      <div class="footer-lb">Contratos</div>
+      <div class="footer-btns" style="margin-top:0">
+        <a class="footer-btn" href="contratos/contrato-scm.pdf" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+          Contrato SCM (Internet)
+        </a>
+        <a class="footer-btn" href="contratos/contrato-sva.pdf" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+          Contrato SVA (Streamings)
+        </a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Portal Net Telecomunicações LTDA · CNPJ 10.303.252/0001-43<br>Aparecida de Goiânia, GO</p>
+  </div>
+</footer>
+
+<a class="float-ag" href="contratar.html" aria-label="Agendar instalação online">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
+</a>
+<a class="float-wa" href="https://api.whatsapp.com/send?phone=5562993601651&text=Ol%C3%A1!%20Quero%20contratar%20um%20plano%20Portal%20Net." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+/* MENU MOBILE */
+function toggleNav(){
+  var d=document.getElementById('navDrawer'),b=document.getElementById('navBurger');
+  var open=d.classList.toggle('open');
+  b.setAttribute('aria-expanded',open);
+}
+document.querySelectorAll('#navDrawer a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('navDrawer').classList.remove('open');document.getElementById('navBurger').setAttribute('aria-expanded','false')});
+});
+
+/* REVEAL */
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+/* CONTADORES */
+function animCount(el){
+  var t=+el.dataset.target,d=1500,s=16,steps=d/s,i=0;
+  var iv=setInterval(function(){i++;el.textContent=Math.round(t*Math.min(i/steps,1));if(i>=steps)clearInterval(iv)},s);
+}
+var co=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){animCount(e.target);co.unobserve(e.target)}});
+},{threshold:.5});
+document.querySelectorAll('.count').forEach(function(el){co.observe(el)});
+
+/* FAQ */
+function toggleFaq(btn){
+  var item=btn.parentNode,isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false')});
+  if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true')}
+}
+
+/* TRABALHE CONOSCO */
+function atualizarArquivo(input){
+  var label=document.querySelector('.jobs-file-label'),span=document.getElementById('jobsFileName');
+  if(input.files&&input.files[0]){span.textContent=input.files[0].name;label.classList.add('has-file')}
+  else{span.textContent='Clique para selecionar o arquivo';label.classList.remove('has-file')}
+}
+if(new URLSearchParams(location.search).get('candidatura')==='ok'){
+  var f=document.getElementById('jobsForm'),s=document.getElementById('jobsSuccess');
+  if(f&&s){f.style.display='none';s.style.display='block'}
+}
+</script>
+</body>
+</html>
