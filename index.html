@@ -8,7 +8,6 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="dns-prefetch" href="https://i.pravatar.cc">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
 <meta property="og:title" content="Portal Net — Internet Fibra Óptica em Aparecida de Goiânia">
 <meta property="og:description" content="Fibra óptica em Aparecida de Goiânia, Goiânia e Região. Planos a partir de R$99,90/mês, 100% fibra óptica e streamings inclusos.">
@@ -250,16 +249,22 @@ img{max-width:100%;display:block}
 /* DEPOIMENTOS */
 .depoimentos{background:white;padding:80px 0}
 .depoimentos-header{text-align:center;margin-bottom:48px;padding:0 20px}
-.depo-carousel-wrap{max-width:1100px;margin:0 auto;padding:0 32px;overflow:hidden}
+.depo-carousel-wrap{max-width:1036px;margin:0 auto;overflow:hidden}
 .depo-track{display:flex;gap:24px;transition:transform .5s cubic-bezier(.25,.46,.45,.94)}
 .depo-card{flex:0 0 calc((100% - 48px) / 3);background:var(--gray-bg);border-radius:20px;padding:28px 24px;border:1px solid #E8EEF8;transition:box-shadow .3s,border-color .3s}
 .depo-card:hover{box-shadow:0 12px 36px rgba(0,65,191,.1);border-color:#C7D9F5}
 .depo-quote{font-size:48px;font-weight:900;color:var(--blue-pale);line-height:.8;margin-bottom:10px;font-family:'Nunito',sans-serif}
 .depo-text{font-size:14px;color:#5A6A88;line-height:1.65;margin-bottom:14px}
-.depo-stars{color:var(--amber);font-size:16px;letter-spacing:2px;margin-bottom:18px}
+.depo-stars{color:var(--amber);font-size:16px;letter-spacing:2px;margin-bottom:12px}
 .depo-author{display:flex;align-items:center;gap:12px}
 .depo-avatar{width:44px;height:44px;min-width:44px;border-radius:50%;overflow:hidden;border:2px solid var(--blue-pale);background:var(--blue)}
-.depo-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.depo-avatar{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:18px}
+.depo-card{display:flex;flex-direction:column}
+.depo-card .depo-text{flex:1}
+.depo-city{display:flex;align-items:center;gap:5px}
+.g-ic{flex-shrink:0}
+.depo-note{text-align:center;font-size:12.5px;color:#94a3b8;margin-top:18px;padding:0 20px}
+.depo-note a{color:var(--blue);font-weight:800;text-decoration:none}
 .depo-name{font-size:13px;font-weight:800;color:var(--blue-dark)}
 .depo-city{font-size:11px;color:#94a3b8;margin-top:2px}
 .depo-dots{display:flex;justify-content:center;gap:7px;margin-top:28px}
@@ -483,7 +488,7 @@ img{max-width:100%;display:block}
   /* DEPOIMENTOS */
   .depoimentos{padding:56px 0}
   .depoimentos-header{padding:0 20px;margin-bottom:28px}
-  .depo-carousel-wrap{padding:0 20px}
+  .depo-carousel-wrap{margin:0 20px}
   .depo-card{flex:0 0 100%}
   .depo-text{font-size:14px}
   /* FAQ */
@@ -1058,79 +1063,83 @@ img{max-width:100%;display:block}
   <div class="depoimentos-header reveal">
     <div class="section-label">Depoimentos</div>
     <h2 class="section-title">O QUE NOSSOS<br><span class="accent">CLIENTES FALAM</span></h2>
-    <a href="https://www.google.com/search?q=Portal+Net+Telecomunica%C3%A7%C3%B5es+Aparecida+de+Goi%C3%A2nia" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:10px 20px;margin-top:16px;box-shadow:0 2px 10px rgba(0,0,0,.06);text-decoration:none;transition:all .2s" onmouseover="this.style.boxShadow='0 6px 20px rgba(0,0,0,.12)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 10px rgba(0,0,0,.06)';this.style.transform='none'">
+    <a href="https://maps.google.com/?cid=16378914368372118997" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:10px 20px;margin-top:16px;box-shadow:0 2px 10px rgba(0,0,0,.06);text-decoration:none;transition:all .2s" onmouseover="this.style.boxShadow='0 6px 20px rgba(0,0,0,.12)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='0 2px 10px rgba(0,0,0,.06)';this.style.transform='none'">
       <svg width="22" height="22" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
       <div style="text-align:left">
-        <div style="font-size:13px;font-weight:800;color:#1a202c">Avaliações no Google</div>
-        <div style="font-size:12px;color:var(--amber);letter-spacing:1px">★★★★★ <span style="color:#64748b;font-weight:600">5.0 · ver no Google →</span></div>
+        <div style="font-size:13px;font-weight:800;color:#1a202c">Nota 5,0 no Google</div>
+        <div style="font-size:12px;color:var(--amber);letter-spacing:1px">★★★★★ <span style="color:#64748b;font-weight:600;letter-spacing:0">+2.200 avaliações · ver →</span></div>
       </div>
     </a>
   </div>
   <div class="depo-carousel-wrap">
     <div class="depo-track">
       <div class="depo-card">
-        <div class="depo-quote">"</div>
-        <p class="depo-text">Já uso a Portal Net há meses e o preço não mudou. Internet rápida, sem quedas. Nunca precisei chamar o suporte!</p>
-        <div class="depo-stars">★★★★★</div>
+        <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="depo-text">“Estou usando os serviços da portal net a cerca de dois meses, estou super satisfeito com os serviços...A Internet mesmo com muitas pessoas usando ao mesmo tempo é muito boa. (Quando toda a família se reúne em casa e estão a usar) Nota 10”</p>
         <div class="depo-author">
-          <div class="depo-avatar"><img src="https://i.pravatar.cc/80?img=3" alt="Marcos Oliveira" loading="lazy"></div>
-          <div><div class="depo-name">Marcos Oliveira</div><div class="depo-city">Aparecida de Goiânia, GO</div></div>
+          <div class="depo-avatar" aria-hidden="true">J</div>
+          <div><div class="depo-name">Júnior M.</div><div class="depo-city"><svg class="g-ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Avaliação no Google · nov 2026</div></div>
         </div>
       </div>
       <div class="depo-card">
-        <div class="depo-quote">"</div>
-        <p class="depo-text">Instalação rápida, técnico atencioso. O Wifi 6 do plano foi um diferencial — sinal muito mais estável em casa!</p>
-        <div class="depo-stars">★★★★★</div>
+        <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="depo-text">“Sem dúvidas, a melhor internet do mundo! Quase não dá problema e, nas raras vezes em que preciso de ajuda, a Gabriela salva o dia com um atendimento nota 10”</p>
         <div class="depo-author">
-          <div class="depo-avatar"><img src="https://i.pravatar.cc/80?img=5" alt="Ana Paula Souza" loading="lazy"></div>
-          <div><div class="depo-name">Ana Paula Souza</div><div class="depo-city">Vera Cruz I, Aparecida de Goiânia</div></div>
+          <div class="depo-avatar" aria-hidden="true">A</div>
+          <div><div class="depo-name">Aguinaldo</div><div class="depo-city"><svg class="g-ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Avaliação no Google · set 2026</div></div>
         </div>
       </div>
       <div class="depo-card">
-        <div class="depo-quote">"</div>
-        <p class="depo-text">Home office perfeito com a Portal Net. Estabilidade total, nunca cai, preço fixo. Melhor decisão que tomei.</p>
-        <div class="depo-stars">★★★★★</div>
+        <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="depo-text">“O técnico Carlos Daniel que instalou minha Internet foi muito educado e prestativo, fez a instalação pela tomada sem necessidade de furar a parede e deixou os cabos presos, um excelente serviço!”</p>
         <div class="depo-author">
-          <div class="depo-avatar"><img src="https://i.pravatar.cc/80?img=8" alt="Ricardo Santos" loading="lazy"></div>
-          <div><div class="depo-name">Ricardo Santos</div><div class="depo-city">Aparecida de Goiânia, GO</div></div>
+          <div class="depo-avatar" aria-hidden="true">H</div>
+          <div><div class="depo-name">Helia M.</div><div class="depo-city"><svg class="g-ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Avaliação no Google · ago 2026</div></div>
         </div>
       </div>
       <div class="depo-card">
-        <div class="depo-quote">"</div>
-        <p class="depo-text">Troquei meu provedor antigo e foi a melhor decisão. Velocidade real e sinal que nunca cai na minha região.</p>
-        <div class="depo-stars">★★★★★</div>
+        <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="depo-text">“Internet muito boa, nunca tenho problemas, o atendimento é maravilhoso, especialmente do Júlio César, muito simpático e prestativo.”</p>
         <div class="depo-author">
-          <div class="depo-avatar"><img src="https://i.pravatar.cc/80?img=10" alt="Juliana Ferreira" loading="lazy"></div>
-          <div><div class="depo-name">Juliana Ferreira</div><div class="depo-city">Aparecida de Goiânia, GO</div></div>
+          <div class="depo-avatar" aria-hidden="true">L</div>
+          <div><div class="depo-name">Lorena C.</div><div class="depo-city"><svg class="g-ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Avaliação no Google · nov 2026</div></div>
         </div>
       </div>
       <div class="depo-card">
-        <div class="depo-quote">"</div>
-        <p class="depo-text">Atendimento incrível, instalação no mesmo dia. Recomendo pra todo mundo aqui de Aparecida!</p>
-        <div class="depo-stars">★★★★★</div>
+        <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="depo-text">“Eu já fui cliente em 2021 e agora tô voltando em 2026, não dá para ficar sem o serviço da Portal, O técnico Nivaldo Soares fez uma instalação impecável e em um tempo muito curto 🩷, incrível, recomendo”</p>
         <div class="depo-author">
-          <div class="depo-avatar"><img src="https://i.pravatar.cc/80?img=12" alt="Carlos Mendes" loading="lazy"></div>
-          <div><div class="depo-name">Carlos Mendes</div><div class="depo-city">Aparecida de Goiânia, GO</div></div>
+          <div class="depo-avatar" aria-hidden="true">T</div>
+          <div><div class="depo-name">Thalyta L.</div><div class="depo-city"><svg class="g-ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Avaliação no Google · jul 2026</div></div>
         </div>
       </div>
       <div class="depo-card">
-        <div class="depo-quote">"</div>
-        <p class="depo-text">Sem fidelidade e sem pegadinha no contrato. Foi exatamente o que prometeram desde o primeiro dia.</p>
-        <div class="depo-stars">★★★★★</div>
+        <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="depo-text">“Quero agradecer e elogiar o Nivaldo pelo atendimento excepcional. É raro encontrar um profissional tão caprichoso, educado, paciente e dedicado. A instalação ficou impecável, parabéns.”</p>
         <div class="depo-author">
-          <div class="depo-avatar"><img src="https://i.pravatar.cc/80?img=20" alt="Fernanda Lima" loading="lazy"></div>
-          <div><div class="depo-name">Fernanda Lima</div><div class="depo-city">Vera Cruz I, Aparecida de Goiânia</div></div>
+          <div class="depo-avatar" aria-hidden="true">J</div>
+          <div><div class="depo-name">Juliana B.</div><div class="depo-city"><svg class="g-ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Avaliação no Google · ago 2026</div></div>
+        </div>
+      </div>
+      <div class="depo-card">
+        <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="depo-text">“Internet muito boa msm, e o melhor é a facilidade e qualidade de atendimento através do whatsapp. Quero deixar aqui meus parabéns a atendente Gabrielly que me atendeu”</p>
+        <div class="depo-author">
+          <div class="depo-avatar" aria-hidden="true">J</div>
+          <div><div class="depo-name">Josias S.</div><div class="depo-city"><svg class="g-ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Avaliação no Google · set 2026</div></div>
+        </div>
+      </div>
+      <div class="depo-card">
+        <div class="depo-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="depo-text">“O técnico Daniel e um ótimo profissional, nos atendeu super bem, chegou pontualmente no horário, super recomendo a portal Net e o técnico Daniel para realização da instalação 🤝”</p>
+        <div class="depo-author">
+          <div class="depo-avatar" aria-hidden="true">R</div>
+          <div><div class="depo-name">Romildo J.</div><div class="depo-city"><svg class="g-ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Avaliação no Google · ago 2026</div></div>
         </div>
       </div>
     </div>
-    <div class="depo-dots">
-      <button class="depo-dot active" aria-label="Depoimento 1"></button>
-      <button class="depo-dot" aria-label="Depoimento 2"></button>
-      <button class="depo-dot" aria-label="Depoimento 3"></button>
-      <button class="depo-dot" aria-label="Depoimento 4"></button>
-      <button class="depo-dot" aria-label="Depoimento 5"></button>
-      <button class="depo-dot" aria-label="Depoimento 6"></button>
-    </div>
+    <div class="depo-dots" aria-label="Escolher avaliação"></div>
+    <p class="depo-note">Avaliações reais de clientes, copiadas do Google. <a href="https://maps.google.com/?cid=16378914368372118997" target="_blank" rel="noopener">Ver todas no Google →</a></p>
   </div>
 </section>
 
@@ -1387,21 +1396,33 @@ function scrollChat(){const e=document.getElementById('viaMsgs');setTimeout(()=>
   if(!wrap)return;
   const track=wrap.querySelector('.depo-track');
   const cards=Array.from(track.querySelectorAll('.depo-card'));
-  const dots=Array.from(wrap.querySelectorAll('.depo-dot'));
+  const dotsBox=wrap.querySelector('.depo-dots');
+  let dots=[];
   let cur=0,timer;
   function vis(){return window.innerWidth<=768?1:3}
   function maxI(){return Math.max(0,cards.length-vis())}
+  function buildDots(){
+    dotsBox.innerHTML='';
+    dots=[];
+    for(let i=0;i<=maxI();i++){
+      const d=document.createElement('button');
+      d.className='depo-dot';d.type='button';d.setAttribute('aria-label','Avaliação '+(i+1));
+      d.addEventListener('click',()=>{goTo(i);stop();start()});
+      dotsBox.appendChild(d);dots.push(d);
+    }
+  }
   function goTo(n){
     n=Math.max(0,Math.min(n,maxI()));
     cur=n;
-    const w=cards[0].offsetWidth+24;
-    track.style.transform='translateX(-'+(cur*w)+'px)';
+    const x=cards[cur].getBoundingClientRect().left-cards[0].getBoundingClientRect().left; /* posição exata, sem arredondar a largura */
+    track.style.transform='translateX(-'+x+'px)';
     dots.forEach((d,i)=>d.classList.toggle('active',i===cur));
   }
   function next(){goTo(cur>=maxI()?0:cur+1)}
   function start(){timer=setInterval(next,4500)}
   function stop(){clearInterval(timer)}
-  dots.forEach((d,i)=>d.addEventListener('click',()=>{goTo(i);stop();start()}));
+  buildDots();
+  goTo(0);
   let sx=0;
   track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;stop()},{passive:true});
   track.addEventListener('touchend',e=>{
@@ -1409,7 +1430,8 @@ function scrollChat(){const e=document.getElementById('viaMsgs');setTimeout(()=>
     if(Math.abs(dx)>40)dx<0?next():goTo(cur-1);
     start();
   },{passive:true});
-  window.addEventListener('resize',()=>goTo(cur));
+  let lastMax=maxI();
+  window.addEventListener('resize',()=>{if(maxI()!==lastMax){lastMax=maxI();buildDots()}goTo(cur)});
   start();
 })();
 
