@@ -205,8 +205,11 @@ img{max-width:100%;display:block}
 /* ABOUT */
 .about{display:flex;min-height:480px;overflow:hidden}
 .about-visual{flex:0 0 48%;position:relative;overflow:hidden;min-height:480px;background:var(--blue-dark)}
-.about-visual img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
-.about-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(0,33,99,.3) 0%,transparent 60%);pointer-events:none}
+.about-visual img{display:block}
+.about-main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.about-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,33,99,.35) 0%,transparent 45%);pointer-events:none}
+.about-inset{position:absolute;right:24px;bottom:24px;z-index:2;width:46%;max-width:300px;aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:4px solid #fff;box-shadow:0 14px 34px rgba(0,20,60,.35)}
+.about-inset img{width:100%;height:100%;object-fit:cover}
 .about-right{flex:1;background:white;display:flex;align-items:center;padding:56px 52px;border-left:1px solid #E8EEF8}
 .about-content{max-width:480px}
 .about-title{font-family:'Nunito',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:900;text-transform:uppercase;line-height:1.1;margin-bottom:16px;color:var(--blue-dark)}
@@ -464,7 +467,8 @@ img{max-width:100%;display:block}
   .plan-card{padding:24px 20px 20px}
   /* ABOUT */
   .about{flex-direction:column}
-  .about-visual{min-height:220px;flex:none;width:100%}
+  .about-visual{min-height:300px;flex:none;width:100%}
+  .about-inset{right:12px;bottom:12px;width:40%;border-width:3px;border-radius:12px}
   .about-right{padding:28px 20px;border-left:none;border-top:1px solid #E8EEF8}
   .about-content{max-width:100%}
   .about-title{font-size:22px}
@@ -685,7 +689,7 @@ img{max-width:100%;display:block}
 }
 @media(prefers-reduced-motion:reduce){.agendar-box::before,.btn-agendar,.agendar-pill .live,.agendar-float{animation:none}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Portal Net","description":"Provedor de internet fibra óptica em Aparecida de Goiânia, Goiânia e Região. 100% fibra, Wifi 6 e streamings inclusos.","url":"https://euwill-maker.github.io/portal-net/","telephone":"+5562993601651","email":"comercial@portalnetfibra.com.br","priceRange":"R$99,90-R$179,90/mês","address":{"@type":"PostalAddress","streetAddress":"Rua H 135, Quadra 294, Lote 6, Casa 1, Vera Cruz I","addressLocality":"Aparecida de Goiânia","addressRegion":"GO","postalCode":"74936-230","addressCountry":"BR"},"areaServed":[{"@type":"City","name":"Aparecida de Goiânia, GO"}],"sameAs":["https://www.instagram.com/portal_net/","https://www.facebook.com/internetfibraportalnet"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Portal Net","description":"Provedor de internet fibra óptica em Aparecida de Goiânia, Goiânia e Região. 100% fibra, Wifi 6 e streamings inclusos.","url":"https://euwill-maker.github.io/portal-net/","telephone":"+5562993601651","email":"comercial@portalnetfibra.com.br","priceRange":"R$99,90-R$179,90/mês","address":{"@type":"PostalAddress","streetAddress":"Rua H 135, Quadra 294, Lote 6, Casa 1, Vera Cruz I","addressLocality":"Aparecida de Goiânia","addressRegion":"GO","postalCode":"74936-230","addressCountry":"BR"},"areaServed":[{"@type":"City","name":"Aparecida de Goiânia, GO"},{"@type":"City","name":"Goiânia, GO"}],"sameAs":["https://www.instagram.com/portal_net/","https://www.facebook.com/internetfibraportalnet"]}</script>
 </head>
 <body>
 
@@ -802,7 +806,6 @@ img{max-width:100%;display:block}
 <!-- PLANOS -->
 <section class="plans" id="planos">
   <div class="plans-header reveal">
-    <div class="section-label">Planos Residenciais</div>
     <h2 class="section-title">ESCOLHA O PLANO<br><span class="accent">IDEAL PARA VOCÊ</span></h2>
     <div class="plans-streams">
       <span>Streamings inclusos:</span>
@@ -980,7 +983,8 @@ img{max-width:100%;display:block}
 <!-- ABOUT -->
 <section class="about">
   <div class="about-visual reveal from-left">
-    <img src="team.jpg" alt="Equipe Portal Net" loading="lazy">
+    <img class="about-main" src="equipe-sala.jpg" alt="Central da Portal Net com a equipe trabalhando" loading="lazy" width="1200" height="928">
+    <div class="about-inset"><img src="equipe-atendimento.jpg" alt="Atendentes da Portal Net com fone, atendendo clientes" loading="lazy" width="900" height="675"></div>
   </div>
   <div class="about-right">
     <div class="about-content reveal from-right">
@@ -1147,7 +1151,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-question">O que é o Wifi 6 incluso?<div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
-      <div class="faq-answer"><div class="faq-answer-inner">Nossos roteadores usam Wifi 6, o padrão mais moderno — mais estabilidade e alcance de sinal em toda a casa, sem custo extra.</div></div>
+      <div class="faq-answer"><div class="faq-answer-inner">O Wi-Fi 6 é a sexta geração da tecnologia de rede sem fio, criada para oferecer mais velocidade, maior estabilidade e alta eficiência em locais com muitos aparelhos conectados. E entregamos essa tecnologia para os clientes Portal Net.</div></div>
     </div>
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-question">Como funciona o suporte?<div class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>

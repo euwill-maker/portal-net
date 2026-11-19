@@ -101,7 +101,7 @@
   .flabel{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:#8496b2;margin:20px 0 10px}
 
   .cover{display:inline-flex;align-items:center;gap:8px;background:var(--blue-pale);color:var(--blue);font-size:13px;font-weight:800;padding:9px 15px;border-radius:100px;margin-bottom:6px}
-  .cover svg{width:16px;height:16px}
+  .cover svg{width:16px;height:16px;flex-shrink:0}
 
   /* alerta de erro no topo do card */
   .alertbox{display:none;align-items:center;gap:10px;background:#fff4f1;border:1.5px solid #f6c3b4;color:#a33517;border-radius:13px;padding:12px 14px;font-size:13.5px;font-weight:700;margin-bottom:16px}
@@ -140,6 +140,8 @@
   .field label .opt{color:var(--faint);font-weight:700;text-transform:none;letter-spacing:0}
   .field input{width:100%;border:2px solid var(--line);border-radius:13px;padding:14px 15px;font-size:16px;font-family:inherit;font-weight:700;color:var(--ink);background:#fbfcff;transition:.18s;min-height:48px}
   .field input:focus{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(0,65,191,.12)}
+  .field select{width:100%;border:2px solid var(--line);border-radius:13px;padding:14px 42px 14px 15px;font-size:16px;font-family:inherit;font-weight:700;color:var(--ink);background:#fbfcff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2364748f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 15px center;-webkit-appearance:none;appearance:none;min-height:48px;transition:.18s}
+  .field select:focus{outline:none;border-color:var(--blue);background-color:#fff;box-shadow:0 0 0 4px rgba(0,65,191,.12)}
   .field input::placeholder{color:#a6b3ca;font-weight:600}
   .field.half-wrap{display:flex;gap:13px}
   .field.half-wrap>div{flex:1;min-width:0}
@@ -258,7 +260,7 @@
       <!-- STEP 1 — PLANO -->
       <div class="pane on" data-pane="1">
         <div class="qhead"><div class="qn">1</div><h2 class="q">Escolha seu plano</h2></div>
-        <div class="cover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Cobertura: Aparecida de Goiânia</div>
+        <div class="cover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> <span>Cobertura: Aparecida de Goiânia, Goiânia e Região</span></div>
         <p class="sub" style="margin-top:14px">Todos com fibra óptica, Wi-Fi 6 e instalação grátis.</p>
         <div class="alertbox" id="alert1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg><span>Escolha um plano para continuar.</span></div>
         <div class="plans" id="plans"></div>
@@ -325,6 +327,14 @@
           <label for="fone">WhatsApp</label>
           <input type="tel" id="fone" placeholder="(62) 90000-0000" inputmode="numeric" autocomplete="tel" maxlength="16">
           <div class="errmsg" id="e_fone">Digite um WhatsApp válido com DDD.</div>
+        </div>
+        <div class="field">
+          <label for="cidade">Cidade</label>
+          <select id="cidade" autocomplete="address-level2">
+            <option>Aparecida de Goiânia</option>
+            <option>Goiânia</option>
+            <option>Outra cidade da região</option>
+          </select>
         </div>
         <div class="field">
           <label for="rua">Endereço (rua e número)</label>
@@ -427,7 +437,7 @@
   var lastSent = "";
   var $ = function(s,ctx){return (ctx||document).querySelector(s)};
   var $$ = function(s,ctx){return Array.prototype.slice.call((ctx||document).querySelectorAll(s))};
-  var FIELDS = ["nome","fone","rua","bairro","ref","cpf"];
+  var FIELDS = ["nome","fone","cidade","rua","bairro","ref","cpf"];
 
   /* ---------- tracking ---------- */
   window.dataLayer = window.dataLayer || [];
@@ -638,7 +648,7 @@
   function buildReview(){
     var p = PLANS[state.planIdx];
     var rows = [
-      ["Cidade", "Aparecida de Goiânia"],
+      ["Cidade", $("#cidade").value],
       ["Plano", p.spd],
       ["Instalação", state.day+" · "+state.period],
       ["Nome", $("#nome").value.trim()],
@@ -653,7 +663,7 @@
     var p = PLANS[state.planIdx];
     var L = [];
     L.push("*Novo pedido de contratação — Portal Net* 🚀","");
-    L.push("📍 *Cidade:* Aparecida de Goiânia");
+    L.push("📍 *Cidade:* "+$("#cidade").value);
     L.push("📶 *Plano:* "+p.spd+" — R$"+p.price+"/mês");
     L.push("");
     L.push("👤 *Nome:* "+$("#nome").value.trim());
@@ -694,7 +704,7 @@
   (function initResume(){
     var d = load();
     if(!d) { booting=false; track("contratar_iniciado"); return; }
-    var hasData = (d.f && FIELDS.some(function(k){ return (d.f[k]||"").trim()!==""; })) || d.day || d.period;
+    var hasData = (d.f && FIELDS.some(function(k){ return k!=="cidade" && (d.f[k]||"").trim()!==""; })) || d.day || d.period; /* cidade já vem preenchida, não conta como rascunho */
     if(!hasData || !d.step || d.step>=5){ clearStore(); booting=false; track("contratar_iniciado"); return; }
 
     $("#resume").classList.add("on");

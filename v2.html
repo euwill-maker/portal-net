@@ -151,7 +151,10 @@ h1,h2,h3{font-family:'Outfit',sans-serif;font-weight:600;letter-spacing:-0.025em
 
 /* ABOUT */
 .about-grid{display:flex;flex-direction:column;gap:28px}
-.about-img img{width:100%;height:280px;object-fit:cover;border-radius:26px;display:block}
+.about-img{position:relative}
+.about-img .about-main{width:100%;height:300px;object-fit:cover;object-position:50% 45%;border-radius:26px;display:block}
+.about-inset{position:absolute;right:14px;bottom:-18px;width:48%;max-width:280px;aspect-ratio:4/3;border-radius:16px;overflow:hidden;border:4px solid #fff;box-shadow:0 14px 34px rgba(0,20,60,.25)}
+.about-inset img{width:100%;height:100%;object-fit:cover;display:block}
 .about h2{font-size:32px;margin-top:12px}
 .about h2 span{color:var(--blue)}
 .about p{font-size:15px;line-height:1.7;color:var(--muted);margin-top:14px}
@@ -253,7 +256,8 @@ h1,h2,h3{font-family:'Outfit',sans-serif;font-weight:600;letter-spacing:-0.025em
   .apps-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
   .about-grid{flex-direction:row;align-items:center;gap:56px}
   .about-col{flex:1 1 0;min-width:0}
-  .about-img img{height:420px}
+  .about-img .about-main{height:440px}
+  .about-inset{right:-22px;bottom:-26px}
   .about h2{font-size:42px}
   .cob-card{padding:52px 48px}
   .cob-card h2{font-size:38px}
@@ -339,7 +343,6 @@ h1,h2,h3{font-family:'Outfit',sans-serif;font-weight:600;letter-spacing:-0.025em
 <section class="sec sec-soft" id="planos">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="eyebrow">Planos residenciais</div>
       <h2>Escolha o seu.</h2>
       <p class="lead">Instalação grátis, sem fidelidade e com o preço que você contratou todo mês.</p>
     </div>
@@ -444,7 +447,8 @@ h1,h2,h3{font-family:'Outfit',sans-serif;font-weight:600;letter-spacing:-0.025em
   <div class="wrap">
     <div class="about-grid">
       <div class="about-col about-img reveal">
-        <img src="team.jpg" alt="Equipe da Portal Net">
+        <img class="about-main" src="equipe-sala.jpg" alt="Central da Portal Net com a equipe trabalhando" loading="lazy" width="1200" height="928">
+        <div class="about-inset"><img src="equipe-atendimento.jpg" alt="Atendentes da Portal Net com fone, atendendo clientes" loading="lazy" width="900" height="675"></div>
       </div>
       <div class="about-col reveal">
         <div class="eyebrow">Quem somos</div>
@@ -550,7 +554,7 @@ h1,h2,h3{font-family:'Outfit',sans-serif;font-weight:600;letter-spacing:-0.025em
       <div class="faq-item reveal">
         <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">O que é o Wi-Fi 6 incluso?
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-        <div class="faq-a"><p>Nossos roteadores usam Wi-Fi 6, o padrão mais moderno — mais estabilidade e alcance de sinal em toda a casa, sem custo extra.</p></div>
+        <div class="faq-a"><p>O Wi-Fi 6 é a sexta geração da tecnologia de rede sem fio, criada para oferecer mais velocidade, maior estabilidade e alta eficiência em locais com muitos aparelhos conectados. E entregamos essa tecnologia para os clientes Portal Net.</p></div>
       </div>
       <div class="faq-item reveal">
         <button type="button" class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Como funciona o suporte?
